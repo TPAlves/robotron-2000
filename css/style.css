@@ -39,6 +39,7 @@ main {
 }
 
 .robo {
+    cursor: pointer;
     height: 110%;
     z-index: 1;
     position: absolute;

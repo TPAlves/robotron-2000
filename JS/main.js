@@ -1,8 +1,11 @@
 const robotron =  document.querySelector("#robotron");
 const controle = document.querySelectorAll("[data-controle]");
 const estatisticas = document.querySelectorAll("[data-estatistica]");
+const img = document.querySelector("#robotron");
+const pasta = document.querySelector("[data-pasta]")
 
-
+const cores = ["Amarelo","Azul","Branco","Preto","Rosa","Vermelho"];
+var indice = 0;
 //Isso é um Objeto/Array
 const pecas = {
     "bracos":{
@@ -85,9 +88,16 @@ function manipulaDados(operacao, controle){
 }
 
 
-robotron.addEventListener("click", function (evento){
-    console.log(evento);
+robotron.addEventListener("click",  (evento) => {
+    if(indice >= cores.length){
+        indice = 0;
+    }
+    img.src = (evento.target.dataset.pasta + cores[indice] +"/robotron.png")
+    // img.src = (evento.target.dataset.pasta + );
+    // img.src = "";
+    // console.log(evento);
     //console.log("O robô foi selecionado");    
+    indice++;
 });
 
 
